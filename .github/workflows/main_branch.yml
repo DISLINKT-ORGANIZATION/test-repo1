@@ -5,8 +5,7 @@ on:
       - 'main'
 
 jobs:
-  checks:
-    name: Check PR
+  check_pr:
     runs-on: ubuntu-latest
     env:
       PR_BRANCH: ${{github.event.pull_request.head.ref}}
