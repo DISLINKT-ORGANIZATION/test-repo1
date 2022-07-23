@@ -1,8 +1,7 @@
 name: Actions on main branch
 on: 
   pull_request:
-    branches:    
-      - 'main'
+    branches: [main]
 
 jobs:
   check_pr:
