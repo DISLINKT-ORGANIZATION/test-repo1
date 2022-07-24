@@ -5,6 +5,10 @@ on:
     branches: [develop, main]
   push:
     branches: [develop, main]
+  workflow_call:
+    secrets:
+      SOME_SECRET:
+        required: true
 
 jobs:
   ci:
