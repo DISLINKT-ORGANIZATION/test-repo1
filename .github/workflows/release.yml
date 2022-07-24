@@ -5,7 +5,10 @@ on:
     branches: [main]
 
 jobs:
+  ci:
+    uses: DISLINKT-ORGANIZATION/test-repo1/.github/workflows/ci.yml
   release:
+    needs: ci
     runs-on: ubuntu-latest
     steps:
       - name: Create a Github Release
