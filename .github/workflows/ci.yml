@@ -93,7 +93,7 @@ jobs:
           context: .
           push: false
           builder: ${{ steps.buildx.outputs.name }}
-          tags: ${{ secrets.DOCKER_USERNAME }}/test:${{ steps.versioning.outputs.version }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/test-1:${{ steps.versioning.outputs.version }}
           load: true
 
       - name: Docker push
@@ -103,11 +103,11 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/test:${{ steps.versioning.outputs.version }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/test-1:${{ steps.versioning.outputs.version }}
 
       - name: Upload image
         if: ${{ github.event_name == 'push' }}
         uses: ishworkh/docker-image-artifact-upload@v1
         with:
-          image: ${{ secrets.DOCKER_USERNAME }}/test:${{ steps.versioning.outputs.version }}
+          image: ${{ secrets.DOCKER_USERNAME }}/test-1:${{ steps.versioning.outputs.version }}
 
