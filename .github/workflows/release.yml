@@ -58,7 +58,8 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: .
+#          context: .
+          file: ./Dockerfile
           push: false
           secrets: |
             GIT_AUTH_TOKEN = ${{ secrets.GITHUB_TOKEN }}
@@ -70,7 +71,8 @@ jobs:
         id: docker_push
         uses: docker/build-push-action@v2
         with:
-          context: .
+#          context: .
+          file: ./Dockerfile
           push: true
           secrets: |
             GIT_AUTH_TOKEN = ${{ secrets.GITHUB_TOKEN }}
