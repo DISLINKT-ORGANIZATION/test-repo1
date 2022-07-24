@@ -8,7 +8,8 @@ jobs:
   ci:
     uses: ./.github/workflows/ci.yml
     secrets:
-      SOME_SECRET: ${{ secrets.SOME_SECRET }}
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
   release:
     needs: ci
