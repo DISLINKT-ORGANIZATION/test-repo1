@@ -60,6 +60,8 @@ jobs:
         with:
           context: .
           push: false
+          secrets: |
+            GIT_AUTH_TOKEN = ${{ secrets.GITHUB_TOKEN }}
           builder: ${{ steps.buildx.outputs.name }}
           tags: ${{ secrets.DOCKER_USERNAME }}/test-1:${{ steps.versioning.outputs.version }}
           load: true
