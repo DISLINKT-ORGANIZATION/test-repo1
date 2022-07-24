@@ -26,7 +26,7 @@ jobs:
           release_name: "Release <RELEASE_VERSION>"
 
       - name: Build with Maven
-        run: mvn --batch-mode --update-snapshots package
+        run: mvn -f ./pom.xml package
 
       - name: Semantic Versioning
         id: versioning
