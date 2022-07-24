@@ -25,6 +25,9 @@ jobs:
           tag_prefix: v
           release_name: "Release <RELEASE_VERSION>"
 
+      - name: Build with Maven
+        run: mvn --batch-mode --update-snapshots package
+
       - name: Semantic Versioning
         id: versioning
         uses: paulhatch/semantic-version@v4.0.2
