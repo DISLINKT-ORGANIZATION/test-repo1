@@ -17,11 +17,14 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
-    steps:
+    steps:    
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - run: git checkout HEAD^
+      
+      - name: Check commit messages
+        uses: wagoid/commitlint-github-action@v4
 
       - name: Setup Java
         uses: actions/setup-java@v1
